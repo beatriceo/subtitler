@@ -1,0 +1,64 @@
+ffmpeg version 4.0.2 Copyright (c) 2000-2018 the FFmpeg developers
+  built with Apple LLVM version 9.1.0 (clang-902.0.39.2)
+  configuration: --prefix=/usr/local/Cellar/ffmpeg/4.0.2 --enable-shared --enable-pthreads --enable-version3 --enable-hardcoded-tables --enable-avresample --cc=clang --host-cflags= --host-ldflags= --enable-gpl --enable-libmp3lame --enable-libx264 --enable-libxvid --enable-opencl --enable-videotoolbox --disable-lzma
+  libavutil      56. 14.100 / 56. 14.100
+  libavcodec     58. 18.100 / 58. 18.100
+  libavformat    58. 12.100 / 58. 12.100
+  libavdevice    58.  3.100 / 58.  3.100
+  libavfilter     7. 16.100 /  7. 16.100
+  libavresample   4.  0.  0 /  4.  0.  0
+  libswscale      5.  1.100 /  5.  1.100
+  libswresample   3.  1.100 /  3.  1.100
+  libpostproc    55.  1.100 / 55.  1.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'test_video.mov':
+  Metadata:
+    major_brand     : qt  
+    minor_version   : 0
+    compatible_brands: qt  
+    creation_time   : 2018-08-04T07:40:13.000000Z
+    com.apple.quicktime.make: Apple
+    com.apple.quicktime.model: MacBookPro11,4
+    com.apple.quicktime.software: Mac OS X 10.13.1 (17B1003)
+    com.apple.quicktime.creationdate: 2018-08-04T08:37:49+0100
+  Duration: 00:00:05.13, start: 0.000000, bitrate: 11317 kb/s
+    Stream #0:0(und): Video: h264 (Main) (avc1 / 0x31637661), yuv420p(tv, bt709), 1280x720 [SAR 1:1 DAR 16:9], 11000 kb/s, 17.14 fps, 120 tbr, 30k tbn, 60k tbc (default)
+    Metadata:
+      creation_time   : 2018-08-04T07:40:13.000000Z
+      handler_name    : Core Media Data Handler
+      encoder         : H.264
+    Stream #0:1(und): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 324 kb/s (default)
+    Metadata:
+      creation_time   : 2018-08-04T07:40:13.000000Z
+      handler_name    : Core Media Data Handler
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> wrapped_avframe (native))
+  Stream #0:1 -> #0:1 (aac (native) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+[silencedetect @ 0x7fc9aec4c840] silence_start: 0.291406
+[silencedetect @ 0x7fc9aec4c840] silence_end: 1.35279 | silence_duration: 1.06138
+Output #0, null, to 'pipe:':
+  Metadata:
+    major_brand     : qt  
+    minor_version   : 0
+    compatible_brands: qt  
+    com.apple.quicktime.creationdate: 2018-08-04T08:37:49+0100
+    com.apple.quicktime.make: Apple
+    com.apple.quicktime.model: MacBookPro11,4
+    com.apple.quicktime.software: Mac OS X 10.13.1 (17B1003)
+    encoder         : Lavf58.12.100
+    Stream #0:0(und): Video: wrapped_avframe, yuv420p, 1280x720 [SAR 1:1 DAR 16:9], q=2-31, 200 kb/s, 120 fps, 120 tbn, 120 tbc (default)
+    Metadata:
+      creation_time   : 2018-08-04T07:40:13.000000Z
+      handler_name    : Core Media Data Handler
+      encoder         : Lavc58.18.100 wrapped_avframe
+    Stream #0:1(und): Audio: pcm_s16le, 44100 Hz, stereo, s16, 1411 kb/s (default)
+    Metadata:
+      creation_time   : 2018-08-04T07:40:13.000000Z
+      handler_name    : Core Media Data Handler
+      encoder         : Lavc58.18.100 pcm_s16le
+[silencedetect @ 0x7fc9aec4c840] silence_start: 2.15351
+[silencedetect @ 0x7fc9aec4c840] silence_end: 2.65957 | silence_duration: 0.506054
+[silencedetect @ 0x7fc9aec4c840] silence_start: 4.27871
+frame=   88 fps=0.0 q=-0.0 Lsize=N/A time=00:00:05.14 bitrate=N/A speed=21.5x    
+video:46kB audio:836kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[silencedetect @ 0x7fc9aec4c840] silence_end: 5.14438 | silence_duration: 0.865669

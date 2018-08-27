@@ -1,0 +1,44 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf100
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fnil\fcharset0 Monaco;}
+{\colortbl;\red255\green255\blue255;\red27\green29\blue31;\red235\green236\blue237;\red27\green29\blue31;
+\red235\green236\blue237;\red47\green180\blue29;\red0\green0\blue0;\red242\green242\blue242;\red159\green160\blue28;
+}
+{\*\expandedcolortbl;;\cssrgb\c14118\c15294\c16078;\cssrgb\c93725\c94118\c94510;\cssrgb\c14118\c15294\c16078;
+\cssrgb\c93725\c94118\c94510;\cssrgb\c20239\c73899\c14948;\csgray\c0\c85000;\csgray\c95825;\cssrgb\c68469\c68013\c14209;
+}
+\paperw11900\paperh16840\margl1440\margr1440\vieww19800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl300\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://stackoverflow.com/questions/9913032/ffmpeg-to-extract-audio-from-video"}}{\fldrslt 
+\f0\fs26 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 https://stackoverflow.com/questions/9913032/ffmpeg-to-extract-audio-from-video}}
+\f0\fs26 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf2 ffmpeg -i input-video.avi -vn -acodec copy output-audio.aac\
+\pard\pardeftab720\sl300\partightenfactor0
+\cf2 \
+\
+Silencedetect\
+\pard\pardeftab720\sl300\partightenfactor0
+\cf2 ffmpeg -i "input.mov" -af silencedetect=noise=-30dB:d=0.5 -f null - 2> vol.txt\
+\pard\pardeftab720\sl300\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf2 ffmpeg -ss <silence_end - 0.25> -t <next_silence_start - silence_end + 0.25> -i input.mov word-N.mov\
+\
+\pard\pardeftab720\sl300\partightenfactor0
+\cf4 \cb5 \outl0\strokewidth0 ffmpeg -ss <2.65957 - 0.25> -t <4.27871 - 5.14438 + 0.25> -i output-audio.aac sample.aac\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs20 \cf6 \cb7 \kerning1\expnd0\expndtw0 \CocoaLigature0 ffmpeg\cf8  -i \ul audio_slices/slice_1.aac\ulnone  -ac 1 slice_1.flac   
+\f0\fs26 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \outl0\strokewidth0 \strokec2 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs20 \cf9 \cb7 \kerning1\expnd0\expndtw0 \CocoaLigature0 \outl0\strokewidth0 export\cf8  GOOGLE_APPLICATION_CREDENTIALS=\cf9 "credentials.json"\
+NEED TO CHANGE FLAC ENCODING TO 16000\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf6 \cb7 ffmpeg\cf8 \cb7  -i \cf8 \cb7 \ul \ulc8 audio_slices/slice_1.aac\cf8 \cb7 \ulnone  -ac 1 -ab 147k -ar 16000 \cf8 \cb7 \ul \ulc8 audio_slices/slice_1.flac   -> -ac 1 is #audio channels aka mono, stereo; -ab bit-rate, -ar sample rate\
+\cf6 \ulnone node\cf8 \cb7  \cf8 \cb7 \ul \ulc8 streaming.js\cf8 \cb7 \ulnone  listen}
